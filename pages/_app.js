@@ -1,3 +1,5 @@
+import "react-multi-carousel/lib/styles.css";
+
 import Layout from '@/components/Layouts/Layout'
 import '../styles/globals.css'
 

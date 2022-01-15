@@ -54,7 +54,7 @@ const Navbar = () => {
               </li>
 
               <li className="flex justify-center items-center">
-                <Link href={"/"}>
+                <Link href={"/about"}>
                   <a className="hover:text-primary transition-all">About</a>
                 </Link>
               </li>
@@ -87,14 +87,14 @@ const Navbar = () => {
               </li>
 
               <li className="flex justify-center items-center">
-                <Link href={"/"}>
+                <Link href={"/contact"}>
                   <a className="hover:text-primary transition-all">Contact</a>
                 </Link>
               </li>
 
             </ul>
             <div className="flex items-center gap-2 group">
-              <div className="h-10 w-10 grid place-items-center rounded-full bg-gray-300 group-hover:bg-primary text-primary group-hover:text-white text-2xl transition-all duration-500">
+              <div className="h-10 w-10 grid place-items-center rounded-full bg-slate-300 group-hover:bg-primary text-primary group-hover:text-white text-2xl transition-all duration-500">
                 <FaWhatsapp/>
               </div>
               <div>
@@ -128,12 +128,18 @@ const Navbar = () => {
 
           
         </div>
-        <nav className={`absolute transition-all bg-white w-full z-0 ${togleMenu ? 'left-0' : 'left-[30rem]'}`}>
+        <nav className={`absolute transition-all bg-white w-full z-0 ${togleMenu ? 'left-0 opacity-100 pointer-events-auto' : 'left-[30rem] opacity-0 pointer-events-none'}`}>
           <ul className="uppercase text-sm font-medium p-4">
 
             <li className="py-3">
               <Link href={"/"}>
                 <a className="hover:text-primary transition-all">Home</a>
+              </Link>
+            </li>
+
+            <li className="py-3">
+              <Link href={"/about"}>
+                <a className="hover:text-primary transition-all">About</a>
               </Link>
             </li>
 
@@ -165,13 +171,7 @@ const Navbar = () => {
             </li>
 
             <li className="py-3">
-              <Link href={"/"}>
-                <a className="hover:text-primary transition-all">Product</a>
-              </Link>
-            </li>
-
-            <li className="py-3">
-              <Link href={"/"}>
+              <Link href={"/contact"}>
                 <a className="hover:text-primary transition-all">Contact</a>
               </Link>
             </li>
