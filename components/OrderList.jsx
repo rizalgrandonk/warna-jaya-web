@@ -28,7 +28,7 @@ const OrderList = () => {
   ];
 
   return (
-    <ol className="flex justify-center gap-6 flex-wrap">
+    <ol className="flex flex-col md:flex-row justify-center gap-6 flex-wrap">
       {orders.map((order) => (
         <OrderItem key={order.nomor} order={order} />
       ))}
