@@ -2,6 +2,8 @@ import Carousel from "react-multi-carousel";
 
 import ClientItem from "./ClientItem";
 
+import { clients } from "data/clients";
+
 const CustomCarouselDot = ({ onClick, ...rest }) => {
   const { active } = rest;
   return (
@@ -15,21 +17,6 @@ const CustomCarouselDot = ({ onClick, ...rest }) => {
 };
 
 const ClientList = () => {
-  const clients = [
-    "Pt. Behaestex",
-    "Cv. Ketjubung",
-    "Pt. Idec Wood Industries",
-    "Pt. Cipta Dupa Tama",
-    "Pt. Sutrajaya Indahtama",
-    "Tarum House Bali",
-    "Griya Besek Pasuruan",
-    "Pt. Japfa Comfeed",
-    "Cv. Bintang Selatan",
-    "Cv. Optima Indonesia",
-    "Pt. Kayyan Wood Industries",
-    "Pt. Sakari Sumber Abadi",
-  ];
-
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

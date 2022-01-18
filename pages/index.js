@@ -23,7 +23,7 @@ export default function Home() {
             Warna Jaya Surabaya
           </h1>
           <Link href={`/contact`}>
-            <a className="inline-block w-full md:w-auto my-2 md:my-6 md:mx-3 px-6 py-3 bg-primary hover:bg-slate-100 hover:text-primary font-medium tracking-wider uppercase rounded transition-all duration-500">
+            <a className="inline-block w-full md:w-auto my-2 md:my-6 md:mx-3 px-6 py-3 bg-primary hover:bg-slate-100 hover:text-primary font-medium tracking-wider uppercase rounded transition-all duration-500 border border-primary hover:border-slate-100">
               Contact Us
             </a>
           </Link>
@@ -39,14 +39,14 @@ export default function Home() {
           viewBox="0 0 1440 320"
         >
           <path
-            fill="#f1f5f9"
+            fill="#f8fafc"
             fillOpacity="1"
             d="M0,96L120,133.3C240,171,480,245,720,240C960,235,1200,149,1320,106.7L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
           ></path>
         </svg>
       </div>
 
-      <div className="relative container mx-auto pb-14 md:-mt-64">
+      <div className="relative container mx-auto pb-20 md:-mt-64">
         <ServiceList />
       </div>
 

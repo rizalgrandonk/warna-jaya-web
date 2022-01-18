@@ -5,8 +5,8 @@ import Logo from "../../public/logo_text_2.svg";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-slate-300 px-2">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start gap-8 py-10 px-2 border-b border-gray-200">
+    <footer className="w-full bg-slate-200 px-2">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-start gap-8 py-10 px-2 border-b border-slate-50">
         <div className="w-full md:w-[40%]">
           <Link href={"/"}>
             <a className="block relative h-12 w-56">
@@ -29,7 +29,7 @@ const Footer = () => {
 
         <div className="w-full md:w-[30%]">
           <h3 className="text-2xl font-semibold py-1">Navigation</h3>
-          <span className="block h-0.5 w-full bg-slate-200 relative mb-4">
+          <span className="block h-0.5 w-full bg-slate-50 relative mb-4">
             <span className="block h-0.5 w-14 bg-primary absolute left-0" />
           </span>
 
@@ -56,7 +56,7 @@ const Footer = () => {
 
         <div className="w-full md:w-[30%] text-sm">
           <h3 className="text-2xl font-semibold py-1">Contact Info</h3>
-          <span className="block h-0.5 w-full bg-slate-200 relative mb-4">
+          <span className="block h-0.5 w-full bg-slate-50 relative mb-4">
             <span className="block h-0.5 w-14 bg-primary absolute left-0" />
           </span>
 
