@@ -74,7 +74,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container mx-auto py-20 relative">
+      <div className="container mx-auto pt-20 pb-24 relative">
         <p className="text-2xl md:text-3xl font-medium uppercase text-center mb-10 tracking-wider px-4">
           Trusted by various companies
         </p>

@@ -6,7 +6,7 @@ const CustomCarouselDot = ({ onClick, ...rest }) => {
   const { active } = rest;
   return (
     <button
-      className={`h-3 mx-1 mb-10 transition-all ${
+      className={`h-3 mx-1 mb-16 transition-all ${
         active ? "w-8 bg-primary" : "w-4 bg-gray-400"
       }`}
       onClick={() => onClick()}
@@ -16,13 +16,18 @@ const CustomCarouselDot = ({ onClick, ...rest }) => {
 
 const ClientList = () => {
   const clients = [
-    "Textile Manufacturers",
-    "Batik Manufacturers",
-    "Food Processing",
-    "Soap Industry",
-    "Leather Industry",
-    "Paper Industry",
-    "Paint Industry",
+    "Pt. Behaestex",
+    "Cv. Ketjubung",
+    "Pt. Idec Wood Industries",
+    "Pt. Cipta Dupa Tama",
+    "Pt. Sutrajaya Indahtama",
+    "Tarum House Bali",
+    "Griya Besek Pasuruan",
+    "Pt. Japfa Comfeed",
+    "Cv. Bintang Selatan",
+    "Cv. Optima Indonesia",
+    "Pt. Kayyan Wood Industries",
+    "Pt. Sakari Sumber Abadi",
   ];
 
   const responsive = {
