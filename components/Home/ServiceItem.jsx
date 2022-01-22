@@ -4,7 +4,7 @@ import Link from "next/link";
 const ServiceItem = ({ service }) => {
   return (
     <div className="relative w-96 h-[70vh] shadow-lg overflow-hidden group rounded">
-      <div className="w-full h-full transition-all duration-500 group-hover:scale-125 group-hover:rotate-6 bg-cover bg-center">
+      <div className="w-full h-full transition-all duration-500 group-hover:scale-125 group-hover:rotate-6 bg-cover bg-center relative">
         <Image
           src={service.image}
           alt={service.title}

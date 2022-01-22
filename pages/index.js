@@ -1,14 +1,14 @@
 import ClientList from "@/components/ClientList";
-import HomeCarousel from "@/components/HomeCarousel";
-import ServiceList from "@/components/ServiceList";
+import HomeCarousel from "@/components/Home/HomeCarousel";
+import ServiceList from "@/components/Home/ServiceList";
 import Image from "next/image";
 import Link from "next/link";
 
 import Bg from "../public/images/bg-4.jpg";
 
 import { Parallax } from "react-parallax";
-import AdvantageList from "@/components/AdvantageList";
-import OrderList from "@/components/OrderList";
+import AdvantageList from "@/components/Home/AdvantageList";
+import OrderList from "@/components/Home/OrderList";
 
 export default function Home() {
   return (
@@ -39,7 +39,7 @@ export default function Home() {
           viewBox="0 0 1440 320"
         >
           <path
-            fill="#f8fafc"
+            fill="#f1f5f9"
             fillOpacity="1"
             d="M0,96L120,133.3C240,171,480,245,720,240C960,235,1200,149,1320,106.7L1440,64L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"
           ></path>

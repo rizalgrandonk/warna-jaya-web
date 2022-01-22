@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
     <>
       <Meta />
       <Navbar />
-      <main className="bg-slate-50 min-h-screen overflow-hidden">
+      <main className="bg-slate-100 min-h-screen overflow-hidden">
         {children}
       </main>
       <Footer />

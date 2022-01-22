@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HomeCarouselItem = ({ image }) => {
   return (
-    <div className="w-full h-screen md:h-[140vh]">
+    <div className="w-full h-screen md:h-[140vh] relative">
       <Image
         src={image}
         alt=""

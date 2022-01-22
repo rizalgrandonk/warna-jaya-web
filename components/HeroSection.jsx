@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 const HeroSection = ({ image, title, navList }) => {
   return (
@@ -18,14 +19,17 @@ const HeroSection = ({ image, title, navList }) => {
           <h1 className="text-3xl md:text-6xl font-semibold my-8">{title}</h1>
           <p className="text-center text-lg">
             {navList.map((nav, index) => (
-              <>
-                <Link key={index} href={nav.url}>
+              <React.Fragment key={index}>
+                <Link href={nav.url}>
                   <a>{nav.text}</a>
                 </Link>
                 {index !== navList.length - 1 && (
-                  <span className="inline-block w-2 h-2 bg-primary mx-4 rounded-full" />
+                  <span
+                    key={index + 10}
+                    className="inline-block w-2 h-2 bg-primary mx-4 rounded-full"
+                  />
                 )}
-              </>
+              </React.Fragment>
             ))}
           </p>
         </div>
