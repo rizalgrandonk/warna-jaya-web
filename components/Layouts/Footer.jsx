@@ -61,7 +61,8 @@ const Footer = () => {
           </span>
 
           <p className="py-2">
-            <span className="font-bold">Address : </span>Jl. Jalan
+            <span className="font-bold">Address : </span>Jl. Panggung No.150,
+            Nyamplungan, Kec. Pabean Cantian, Kota Surabaya
           </p>
           <p className="py-2">
             <span className="font-bold">Email : </span>warnajayasby150@gmail.com

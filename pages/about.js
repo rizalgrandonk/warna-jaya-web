@@ -1,47 +1,35 @@
 import ClientList from "@/components/ClientList";
+import HeroSection from "@/components/HeroSection";
 import Image from "next/image";
-import Link from "next/link";
 
 import { GiTiredEye, GiBullseye } from "react-icons/gi";
 
-import Bg1 from "../public/images/bg-1.jpg";
+import Hero from "../public/images/bg-1.jpg";
 import Bg2 from "../public/images/bg-2.jpg";
 import Bg4 from "../public/images/bg-4.jpg";
 
 const About = () => {
+  const navList = [
+    {
+      text: "Home",
+      url: "/",
+    },
+    {
+      text: "About",
+      url: "/about",
+    },
+  ];
   return (
     <>
-      <div className="w-full h-[70vh] relative">
-        <Image
-          src={Bg1}
-          alt=""
-          placeholder="blur"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          loading="lazy"
-        />
-        <div className="relative w-full h-full bg-black/60 flex justify-center items-center text-white">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-6xl font-bold my-8">About Us</h1>
-            <p className="text-center text-lg">
-              <Link href={"/"}>
-                <a>Home</a>
-              </Link>
-              <span className="inline-block w-2 h-2 bg-primary mx-4 rounded-full" />
-              About
-            </p>
-          </div>
-        </div>
-      </div>
+      <HeroSection image={Hero} title="About Us" navList={navList} />
 
       <div className="container mx-auto py-20 relative px-6">
         <div className="flex flex-col md:flex-row justify-center items-start">
           <div className="w-full md:w-1/2">
-            <p className="text-primary text-lg mb-4 font font-medium">
+            <p className="text-slate-700 text-lg mb-4 font font-medium">
               About Us
             </p>
-            <h3 className="text-3xl md:text-5xl md:pr-20 font-semibold text-slate-700 leading-snug">
+            <h3 className="text-3xl md:text-5xl md:pr-20 font-semibold text-primary leading-normal">
               Warna Jaya surabaya sudah memiliki customer yang tersebar luas
             </h3>
           </div>
@@ -72,7 +60,7 @@ const About = () => {
 
       <div className="flex flex-col md:flex-row md:items-stretch">
         <div className="flex flex-col md:flex-row">
-          <div className="relative w-full md:w-1/2 h-52 md:h-auto">
+          <div className="relative w-full md:w-2/5 h-52 md:h-auto">
             <Image
               src={Bg2}
               alt=""
@@ -83,7 +71,7 @@ const About = () => {
               loading="lazy"
             />
           </div>
-          <div className="w-full md:w-1/2 h-full bg-slate-700 px-4 md:px-12 pb-16 pt-12 text-slate-200">
+          <div className="w-full md:w-3/5 h-full bg-slate-700 px-4 md:px-12 pb-16 pt-12 text-slate-200">
             <p className="w-min mx-auto mb-8">
               <span className="text-white text-8xl">
                 <GiTiredEye />
@@ -100,7 +88,7 @@ const About = () => {
           </div>
         </div>
         <div className="flex flex-col md:flex-row">
-          <div className="relative w-full md:w-1/2 h-52 md:h-auto">
+          <div className="relative w-full md:w-2/5 h-52 md:h-auto">
             <Image
               src={Bg4}
               alt=""
@@ -112,7 +100,7 @@ const About = () => {
             />
           </div>
 
-          <div className="w-full md:w-1/2 h-full bg-slate-700 px-4 md:px-12 pb-16 pt-12 text-slate-200">
+          <div className="w-full md:w-3/5 h-full bg-slate-700 px-4 md:px-12 pb-16 pt-12 text-slate-200">
             <p className="w-min mx-auto mb-8">
               <span className="text-white text-8xl">
                 <GiBullseye />
