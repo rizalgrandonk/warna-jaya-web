@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-import { FaWhatsapp } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 import Logo from "../../public/logo_text_2.svg";
 import { products } from "data/products";
+import { localize } from "lib/formater";
 
 const Navbar = () => {
   const [activeNav, setAvtiveNav] = useState(false);
   const [togleMenu, setTogleMenu] = useState(false);
   const [togleDropDown, setTogleDropDown] = useState(false);
+
+  const { locale } = useRouter();
 
   const inActiveClass =
     "absolute z-20 w-[80vw] top-14 left-1/2 -translate-x-1/2  shadow-[-10px_10px_0_0_grey]";
@@ -50,22 +53,30 @@ const Navbar = () => {
                 />
               </a>
             </Link>
-            <div className="flex items-center px-4 gap-8 h-12">
+            <div className="flex items-center px-4 gap-10 h-12">
               <ul className="h-full flex items-stretch gap-8 uppercase text-sm font-medium px-4">
                 <li className="flex justify-center items-center">
                   <Link href={"/"}>
-                    <a className="hover:text-primary transition-all">Home</a>
+                    <a className="hover:text-primary transition-all">
+                      {localize(locale, "beranda")}
+                    </a>
                   </Link>
                 </li>
 
                 <li className="flex justify-center items-center">
                   <Link href={"/about"}>
-                    <a className="hover:text-primary transition-all">About</a>
+                    <a className="hover:text-primary transition-all">
+                      {localize(locale, "tentang")}
+                    </a>
                   </Link>
                 </li>
 
                 <li className="relative group flex justify-center items-center gap-1 cursor-pointer">
-                  <p className="hover:text-primary transition-all">Product</p>
+                  <Link href={"/product"}>
+                    <a className="hover:text-primary transition-all">
+                      {localize(locale, "produk")}
+                    </a>
+                  </Link>
                   <span>
                     <FaAngleDown />
                   </span>
@@ -75,7 +86,7 @@ const Navbar = () => {
                       <li key={product.id} className="py-3 flex items-center">
                         <Link href={`/product/${product.slug}`}>
                           <a className="hover:text-primary transition-all px-3">
-                            {product.name}
+                            {localize(locale, product.name)}
                           </a>
                         </Link>
                       </li>
@@ -85,20 +96,32 @@ const Navbar = () => {
 
                 <li className="flex justify-center items-center">
                   <Link href={"/contact"}>
-                    <a className="hover:text-primary transition-all">Contact</a>
+                    <a className="hover:text-primary transition-all">
+                      {localize(locale, "kontak")}
+                    </a>
                   </Link>
                 </li>
               </ul>
-              <div className="flex items-center gap-2 group">
-                <div className="h-10 w-10 grid place-items-center rounded-full bg-slate-300 group-hover:bg-primary text-primary group-hover:text-white text-2xl transition-all duration-500">
-                  <FaWhatsapp />
-                </div>
-                <div>
-                  <p className="uppercase text-sm">Contact Us</p>
-                  <p className="uppercase text-primary font-bold text-sm">
-                    +62 821 3125 6256
-                  </p>
-                </div>
+
+              <div className="flex justify-between items-center">
+                <Link href="/" locale="en">
+                  <a
+                    className={`px-3 py-1 uppercase border border-primary md:text-xl font-medium ${
+                      locale == "en" ? "text-white bg-primary" : ""
+                    }`}
+                  >
+                    en
+                  </a>
+                </Link>
+                <Link href="/" locale="id">
+                  <a
+                    className={`px-3 py-1 uppercase border border-primary md:text-xl font-medium ${
+                      locale == "id" ? "text-white bg-primary" : ""
+                    }`}
+                  >
+                    id
+                  </a>
+                </Link>
               </div>
             </div>
           </nav>
@@ -126,7 +149,7 @@ const Navbar = () => {
             </button>
           </div>
           <nav
-            className={`absolute transition-all bg-white w-full z-0 ${
+            className={`absolute transition-all bg-white w-full z-0 py-3 ${
               togleMenu
                 ? "left-0 opacity-100 pointer-events-auto"
                 : "left-[30rem] opacity-0 pointer-events-none"
@@ -135,13 +158,23 @@ const Navbar = () => {
             <ul className="uppercase text-sm font-medium p-4">
               <li className="py-3">
                 <Link href={"/"}>
-                  <a className="hover:text-primary transition-all">Home</a>
+                  <a
+                    onClick={() => setTogleMenu(false)}
+                    className="hover:text-primary transition-all"
+                  >
+                    {localize(locale, "beranda")}
+                  </a>
                 </Link>
               </li>
 
               <li className="py-3">
                 <Link href={"/about"}>
-                  <a className="hover:text-primary transition-all">About</a>
+                  <a
+                    onClick={() => setTogleMenu(false)}
+                    className="hover:text-primary transition-all"
+                  >
+                    {localize(locale, "tentang")}
+                  </a>
                 </Link>
               </li>
 
@@ -150,7 +183,7 @@ const Navbar = () => {
                   onClick={() => setTogleDropDown(!togleDropDown)}
                   className="hover:text-primary transition-all cursor-pointer flex items-center gap-1"
                 >
-                  Product{" "}
+                  {localize(locale, "produk")}
                   <span>
                     <FaAngleDown />
                   </span>
@@ -164,8 +197,11 @@ const Navbar = () => {
                   {products.map((product) => (
                     <li key={product.id} className="py-3">
                       <Link href={`/product/${product.slug}`}>
-                        <a className="hover:text-primary transition-all">
-                          {product.name}
+                        <a
+                          onClick={() => setTogleMenu(false)}
+                          className="hover:text-primary transition-all"
+                        >
+                          {localize(locale, product.name)}
                         </a>
                       </Link>
                     </li>
@@ -175,10 +211,38 @@ const Navbar = () => {
 
               <li className="py-3">
                 <Link href={"/contact"}>
-                  <a className="hover:text-primary transition-all">Contact</a>
+                  <a
+                    onClick={() => setTogleMenu(false)}
+                    className="hover:text-primary transition-all"
+                  >
+                    {localize(locale, "kontak")}
+                  </a>
                 </Link>
               </li>
             </ul>
+
+            <div className="grid grid-cols-2 px-4">
+              <Link href="/" locale="en">
+                <a
+                  onClick={() => setTogleMenu(false)}
+                  className={`px-3 py-2 uppercase border border-primary md:text-xl font-medium text-center ${
+                    locale == "en" ? "text-white bg-primary" : ""
+                  }`}
+                >
+                  en
+                </a>
+              </Link>
+              <Link href="/" locale="id">
+                <a
+                  onClick={() => setTogleMenu(false)}
+                  className={`px-3 py-2 uppercase border border-primary md:text-xl font-medium text-center ${
+                    locale == "id" ? "text-white bg-primary" : ""
+                  }`}
+                >
+                  id
+                </a>
+              </Link>
+            </div>
           </nav>
         </div>
       </header>

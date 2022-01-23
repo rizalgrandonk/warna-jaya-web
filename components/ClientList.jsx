@@ -3,18 +3,7 @@ import Carousel from "react-multi-carousel";
 import ClientItem from "./ClientItem";
 
 import { clients } from "data/clients";
-
-const CustomCarouselDot = ({ onClick, ...rest }) => {
-  const { active } = rest;
-  return (
-    <button
-      className={`h-3 mx-1 mb-16 transition-all ${
-        active ? "w-8 bg-primary" : "w-4 bg-gray-400"
-      }`}
-      onClick={() => onClick()}
-    ></button>
-  );
-};
+import CustomCarouselDot from "./CustomCarouselDot";
 
 const ClientList = () => {
   const responsive = {
