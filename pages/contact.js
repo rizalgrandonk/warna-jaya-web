@@ -1,23 +1,27 @@
 import HeroSection from "@/components/HeroSection";
+import { localize } from "lib/formater";
+import { useRouter } from "next/router";
 import { FaMapMarkedAlt, FaWhatsapp } from "react-icons/fa";
 import { MdEmail, MdPhoneInTalk } from "react-icons/md";
 
 import Hero from "../public/images/bg-4.jpg";
 
 const Contact = () => {
+  const { locale } = useRouter();
+
   const navList = [
     {
-      text: "Home",
+      text: "beranda",
       url: "/",
     },
     {
-      text: "Contact",
+      text: "kontak",
       url: "/contact",
     },
   ];
   return (
     <>
-      <HeroSection image={Hero} title="Contact" navList={navList} />
+      <HeroSection image={Hero} title="kontak" navList={navList} />
       <div className="container mx-auto py-20 relative px-6">
         <div className="flex flex-col md:flex-row justify-center items-start gap-10">
           <div className="w-full md:w-1/2">
@@ -34,10 +38,10 @@ const Contact = () => {
           </div>
           <div className="w-full md:w-1/2 pl-10 py-4 border-l">
             <p className="text-slate-700 text-lg mb-4 font font-medium">
-              Contact Us
+              {localize(locale, "hubungiKami")}
             </p>
             <h3 className="text-3xl md:text-5xl md:pr-20 font-semibold text-primary leading-normal mb-10">
-              Contact Information
+              {localize(locale, "informasiKontak")}
             </h3>
             <div className="flex items-center gap-4 mb-6">
               <div className="rounded-full border-dotted border border-primary p-2">
@@ -47,7 +51,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="text-xl text-slate-700 font-semibold">
-                  Address
+                  {localize(locale, "alamat")}
                 </h4>
                 <p className="text-lg font-light">
                   Jl. Panggung No. 150, Surabaya

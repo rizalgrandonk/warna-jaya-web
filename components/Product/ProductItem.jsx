@@ -1,7 +1,11 @@
+import { localize } from "lib/formater";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const ProductItem = ({ product, currentSlide, slide }) => {
+  const { locale } = useRouter();
+
   return (
     <Link href={`/product/${product.slug}`}>
       <a className="block w-full h-[30vh] md:h-[60vh] px-1 lg:px-3">
@@ -13,7 +17,7 @@ const ProductItem = ({ product, currentSlide, slide }) => {
           >
             <Image
               src={product.image}
-              alt={product.name}
+              alt={localize(locale, product.name)}
               placeholder="blur"
               layout="fill"
               objectFit="cover"
@@ -27,7 +31,7 @@ const ProductItem = ({ product, currentSlide, slide }) => {
                 currentSlide == slide ? "translate-y-0" : "translate-y-80"
               }`}
             >
-              {product.name}
+              {localize(locale, product.name)}
             </h2>
           </div>
         </div>

@@ -1,9 +1,13 @@
+import { localize } from "lib/formater";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Logo from "../../public/logo_text_2.svg";
 
 const Footer = () => {
+  const { locale } = useRouter();
+
   return (
     <footer className="w-full bg-slate-200 px-2">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start gap-8 py-10 px-2 border-b border-slate-50">
@@ -20,15 +24,14 @@ const Footer = () => {
             </a>
           </Link>
           <p className="px-1 mt-4 text-sm leading-relaxed">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi
-            quae earum similique officia inventore corrupti in ad architecto,
-            neque quos veritatis, velit reprehenderit cupiditate fugit eius
-            corporis iure officiis eum.
+            {localize(locale, "footerText")}
           </p>
         </div>
 
         <div className="w-full md:w-[30%]">
-          <h3 className="text-2xl font-semibold py-1">Navigation</h3>
+          <h3 className="text-2xl font-semibold py-1">
+            {localize(locale, "navigasi")}
+          </h3>
           <span className="block h-0.5 w-full bg-slate-50 relative mb-4">
             <span className="block h-0.5 w-14 bg-primary absolute left-0" />
           </span>
@@ -36,33 +39,49 @@ const Footer = () => {
           <ul className="uppercase text-sm font-medium">
             <li className="py-2">
               <Link href={"/"}>
-                <a className="hover:text-primary transition-all">Home</a>
+                <a className="hover:text-primary transition-all">
+                  {localize(locale, "beranda")}
+                </a>
               </Link>
             </li>
 
             <li className="py-2">
-              <Link href={"/"}>
-                <a className="hover:text-primary transition-all">About Us</a>
+              <Link href={"/about"}>
+                <a className="hover:text-primary transition-all">
+                  {localize(locale, "tentang")}
+                </a>
               </Link>
             </li>
 
             <li className="py-2">
-              <Link href={"/"}>
-                <a className="hover:text-primary transition-all">Contact</a>
+              <Link href={"/product"}>
+                <a className="hover:text-primary transition-all">
+                  {localize(locale, "produk")}
+                </a>
+              </Link>
+            </li>
+
+            <li className="py-2">
+              <Link href={"/contact"}>
+                <a className="hover:text-primary transition-all">
+                  {localize(locale, "kontak")}
+                </a>
               </Link>
             </li>
           </ul>
         </div>
 
         <div className="w-full md:w-[30%] text-sm">
-          <h3 className="text-2xl font-semibold py-1">Contact Info</h3>
+          <h3 className="text-2xl font-semibold py-1">
+            {localize(locale, "contactInfo")}
+          </h3>
           <span className="block h-0.5 w-full bg-slate-50 relative mb-4">
             <span className="block h-0.5 w-14 bg-primary absolute left-0" />
           </span>
 
           <p className="py-2">
-            <span className="font-bold">Address : </span>Jl. Panggung No.150,
-            Nyamplungan, Kec. Pabean Cantian, Kota Surabaya
+            <span className="font-bold">{localize(locale, "alamat")} : </span>
+            Jl. Panggung No.150, Nyamplungan, Kec. Pabean Cantian, Kota Surabaya
           </p>
           <p className="py-2">
             <span className="font-bold">Email : </span>warnajayasby150@gmail.com

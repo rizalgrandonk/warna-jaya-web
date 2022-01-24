@@ -9,8 +9,12 @@ import Bg from "../public/images/bg-4.jpg";
 import { Parallax } from "react-parallax";
 import AdvantageList from "@/components/Home/AdvantageList";
 import OrderList from "@/components/Home/OrderList";
+import { useRouter } from "next/router";
+import { localize } from "lib/formater";
 
 export default function Home() {
+  const { locale } = useRouter();
+
   return (
     <>
       <div className="w-full h-screen md:h-[140vh] relative">
@@ -24,12 +28,12 @@ export default function Home() {
           </h1>
           <Link href={`/contact`}>
             <a className="inline-block w-full md:w-auto my-2 md:my-6 md:mx-3 px-6 py-3 bg-primary hover:bg-slate-100 hover:text-primary font-medium tracking-wider uppercase rounded transition-all duration-500 border border-primary hover:border-slate-100">
-              Contact Us
+              {localize(locale, "hubungi")}
             </a>
           </Link>
           <Link href={`/product`}>
             <a className="inline-block w-full md:w-auto my-2 md:my-6 md:mx-3 px-6 py-3 bg-transparent hover:bg-slate-100 hover:text-primary font-medium tracking-wider uppercase rounded transition-all duration-500 border border-slate-100">
-              Discover Product
+              {localize(locale, "lihatProduk")}
             </a>
           </Link>
         </div>
@@ -64,11 +68,10 @@ export default function Home() {
         </div>
         <div className="w-full md:w-[55%] h-full bg-slate-700 px-4 md:px-14 py-16 text-white">
           <h2 className="text-3xl md:text-5xl font-bold tracking-wide leading-tight">
-            Our Advantages
+            {localize(locale, "keunggulanKami")}
           </h2>
           <p className="font-light my-8 leading-loose">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-            voluptas numquam pariatur vitae iste iusto
+            {localize(locale, "advantagesText")}
           </p>
           <AdvantageList />
         </div>
@@ -76,7 +79,7 @@ export default function Home() {
 
       <div className="container mx-auto pt-20 pb-24 relative">
         <p className="text-2xl md:text-3xl font-medium uppercase text-center mb-10 tracking-wider px-4">
-          Trusted by various companies
+          {localize(locale, "dipercayaPerusahaan")}
         </p>
         <ClientList />
       </div>
@@ -84,15 +87,12 @@ export default function Home() {
       <Parallax bgImage={"/images/bg-3.jpg"} strength={600}>
         <div className="text-white py-20 md:py-28 bg-black/60 text-center px-4">
           <h3 className="text-3xl md:text-5xl font-bold tracking-wide my-6 leading-tight mx-auto md:w-1/2">
-            Get the best quality products
+            {localize(locale, "variasiProduk")}
           </h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-            voluptas numquam pariatur vitae iste iusto
-          </p>
+          <p>{localize(locale, "variasiText")}</p>
           <Link href={`/product`}>
             <a className="inline-block w-full md:w-auto my-2 md:my-6 md:mx-3 px-8 py-4 bg-primary hover:bg-slate-100 hover:text-primary font-medium tracking-wider uppercase rounded transition-all duration-500">
-              Discover Product
+              {localize(locale, "lihatProduk")}
             </a>
           </Link>
         </div>
@@ -100,7 +100,7 @@ export default function Home() {
 
       <div className="container mx-auto py-20 relative px-4">
         <h2 className="text-3xl md:text-5xl font-bold tracking-wide leading-tight mb-10 text-center">
-          Order System
+          {localize(locale, "sistemPesan")}
         </h2>
         <OrderList />
       </div>

@@ -1,6 +1,8 @@
 import ClientList from "@/components/ClientList";
 import HeroSection from "@/components/HeroSection";
+import { localize } from "lib/formater";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import { GiTiredEye, GiBullseye } from "react-icons/gi";
 
@@ -9,51 +11,36 @@ import Bg2 from "../public/images/bg-2.jpg";
 import Bg4 from "../public/images/bg-4.jpg";
 
 const About = () => {
+  const { locale } = useRouter();
+
   const navList = [
     {
-      text: "Home",
+      text: "beranda",
       url: "/",
     },
     {
-      text: "About",
+      text: "tentang",
       url: "/about",
     },
   ];
   return (
     <>
-      <HeroSection image={Hero} title="About Us" navList={navList} />
+      <HeroSection image={Hero} title="tentangKami" navList={navList} />
 
       <div className="container mx-auto py-20 relative px-6">
         <div className="flex flex-col md:flex-row justify-center items-start">
           <div className="w-full md:w-1/2">
             <p className="text-slate-700 text-lg mb-4 font font-medium">
-              About Us
+              {localize(locale, "tentangKami")}
             </p>
             <h3 className="text-3xl md:text-5xl md:pr-20 font-semibold text-primary leading-normal">
-              Warna Jaya surabaya sudah memiliki customer yang tersebar luas
+              {localize(locale, "aboutSub")}
             </h3>
           </div>
           <div className="w-full md:w-1/2 text-slate-500 md:pl-20 py-8 md:border-l md:border-slate-300">
-            <p className="mb-4">
-              Warna Jaya surabaya telah berdiri sejak 1989 dan memiliki
-              produk-produk untuk pewarnaan, hingga pencucian bahan tekstil
-              serta pewarna untuk pupuk , plywood, dupa , kertas , batik , tinta
-              serta penyamakan kulit.
-            </p>
-            <p className="mb-4">
-              Dengan pengalamannya selama kurang lebih 30 tahun di dunia
-              chemical industry, pastinya Warna Jaya juga menjadi tempat bagi
-              para industri terkait yang baru berdiri untuk melakukan konsultasi
-              agar ke depannya produk dari industri tersebut juga berjalan
-              dengan baik di pasaran.
-            </p>
-            <p className="mb-4">
-              Hingga 2021, Warna Jaya surabaya sudah memiliki customer yang
-              tersebar luas di seluruh indonesia mulai dari Sumatera Utara, Jawa
-              Tengah, Jawa Timur, Bali, Nusa Tenggara Timur, Kalimantan Selatan,
-              Kalimantan Timur, Sulawesi Selatan, Sulawesi Tenggara, hingga
-              Papua. Lebih dari 100 industry terkait.
-            </p>
+            <p className="mb-4">{localize(locale, "aboutText1")}</p>
+            <p className="mb-4">{localize(locale, "aboutText2")}</p>
+            <p className="mb-4">{localize(locale, "aboutText3")}</p>
           </div>
         </div>
       </div>
@@ -78,12 +65,11 @@ const About = () => {
               </span>
             </p>
             <h2 className="text-center text-2xl md:text-3xl mb-3 font-bold tracking-wide leading-tight">
-              Visi
+              {localize(locale, "visi")}
             </h2>
             <span className="block h-0.5 w-12 mx-auto mb-8 bg-white" />
             <p className="text-lg font-light leading-normal">
-              Untuk menjadi produsen dan pemasok terkemuka Bahan-Bahan Warna &
-              Kimia Berkualitas Tinggi di Indonesia dan sekitarnya
+              {localize(locale, "visiText")}
             </p>
           </div>
         </div>
@@ -107,13 +93,11 @@ const About = () => {
               </span>
             </p>
             <h2 className="text-center text-2xl md:text-3xl mb-3 font-bold tracking-wide leading-tight">
-              Misi
+              {localize(locale, "misi")}
             </h2>
             <span className="block h-0.5 w-12 mx-auto mb-8 bg-white" />
             <p className="text-lg font-light leading-normal">
-              Mengolah dan memasok Zat Warna & Bahan Kimia Berkualitas Tinggi
-              untuk memenuhi meningkatnya permintaan industri tekstil di
-              Indonesia
+              {localize(locale, "misiText")}
             </p>
           </div>
         </div>
@@ -121,7 +105,7 @@ const About = () => {
 
       <div className="container mx-auto pt-20 pb-24 relative">
         <p className="text-2xl md:text-3xl font-medium uppercase text-center mb-10 tracking-wider px-4">
-          Trusted by various companies
+          {localize(locale, "dipercayaPerusahaan")}
         </p>
         <ClientList />
       </div>

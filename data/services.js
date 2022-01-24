@@ -4,23 +4,20 @@ import Hero3 from "../public/images/bg-3.jpg";
 
 export const services = [
   {
-    title: "About",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptas numquam pariatur vitae iste iusto",
+    title: "tentang",
+    message: "serviceTentang",
     image: Hero1,
     url: "/about",
   },
   {
-    title: "Dyestuffs & Chemicals",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptas numquam pariatur vitae iste iusto",
+    title: "dyestuffsChemicals",
+    message: "serviceDyestuffs",
     image: Hero2,
     url: "/product",
   },
   {
-    title: "Contact",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis voluptas numquam pariatur vitae iste iusto",
+    title: "kontak",
+    message: "serviceKontak",
     image: Hero3,
     url: "/contact",
   },

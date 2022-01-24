@@ -1,8 +1,10 @@
-import Image from "next/image";
+import { localize } from "lib/formater";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const CategoryList = ({ categories }) => {
   const [activeCategory, setActiveCategory] = useState(categories[0]);
+  const { locale } = useRouter();
 
   useEffect(() => {
     setActiveCategory(null);
@@ -23,7 +25,7 @@ const CategoryList = ({ categories }) => {
             } w-36 md:w-56 px-6 py-4 relative cursor-pointer hover:bg-primary hover:text-white transition-all duration-500`}
           >
             <h3 className="text-lg md:text-xl font-medium uppercase text-center">
-              {category.name}
+              {localize(locale, category.name)}
             </h3>
             {activeCategory.id === category.id && (
               <div className="hidden md:block absolute h-0 w-0 border-[1rem_1rem_0_1rem] border-transparent border-t-primary left-1/2 -bottom-4 -translate-x-1/2"></div>

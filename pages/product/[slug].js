@@ -4,10 +4,11 @@ import { useRouter } from "next/router";
 import { products } from "data/products";
 import LoadingSpinner from "@/components/LoadingSpinner";
 import CategoryList from "@/components/Product/CategoryList";
+import { localize } from "lib/formater";
 
 const SingleProduct = () => {
-  const router = useRouter();
-  const slug = router.query.slug;
+  const { query, locale } = useRouter();
+  const slug = query.slug;
 
   if (!slug) {
     return (
@@ -23,15 +24,15 @@ const SingleProduct = () => {
 
   const navList = [
     {
-      text: "Home",
+      text: "beranda",
       url: "/",
     },
     {
-      text: "Product",
+      text: "produk",
       url: "/product",
     },
     {
-      text: product.name,
+      text: localize(locale, product.name),
       url: `/product/${product.slug}`,
     },
   ];
@@ -46,7 +47,7 @@ const SingleProduct = () => {
 
       <div className="container mx-auto px-4 py-16">
         <h2 className="text-2xl md:text-5xl font-semibold mb-12 text-center">
-          Pilihan Warna {product.name}
+          Pilihan Warna {localize(locale, product.name)}
         </h2>
 
         <CategoryList categories={product.categories} />
