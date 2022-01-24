@@ -23,6 +23,10 @@ const id = {
   "Penyamakan Kulit": "Penyamakan Kulit",
   Tinta: "Tinta",
   produkKami: "Produk Produk Kami",
+  Kertas: "Kertas",
+  Dupa: "Dupa",
+  "Kayu Lapis": "Kayu Lapis",
+  "Batu Paving": "Batu Paving",
 
   // Home
   hubungi: "Hubungi Kami",

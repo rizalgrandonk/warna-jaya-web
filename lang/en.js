@@ -23,6 +23,10 @@ const en = {
   "Penyamakan Kulit": "Leather Tanning",
   Tinta: "Ink",
   produkKami: "Our Products",
+  Kertas: "Paper",
+  Dupa: "Incense",
+  "Kayu Lapis": "Plywood",
+  "Batu Paving": "Paving Stone",
 
   // Home
   hubungi: "Contact Us",
