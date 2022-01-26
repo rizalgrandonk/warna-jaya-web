@@ -157,7 +157,30 @@ export const products = [
             name: ["Cationic Yellow XGL"],
             image: null,
           },
-          // TODO Add acid red and image
+          {
+            id: "W3",
+            type: "Acid",
+            name: ["Acid Red G"],
+            image: "/color/acid/acid-red-g.jpg",
+          },
+          {
+            id: "W4",
+            type: "Acid",
+            name: ["Acid Red A"],
+            image: "/color/acid/acid-red-a.jpg",
+          },
+          {
+            id: "W5",
+            type: "Acid",
+            name: ["Acid Red F-2R"],
+            image: "/color/acid/acid-red-f-2r.jpg",
+          },
+          {
+            id: "W6",
+            type: "Acid",
+            name: ["Acid Red RS"],
+            image: "/color/acid/acid-red-rs.jpg",
+          },
         ],
       },
     ],
@@ -181,8 +204,8 @@ export const products = [
           {
             id: "W2",
             type: "Direct",
-            name: ["Direct Fast Scarlet 4BS"], //?? Not sure
-            image: null,
+            name: ["Direct Fast Scarlet 4BS"],
+            image: "/color/direct/direct-scarlet-4bs.jpg",
           },
           {
             id: "W3",
@@ -190,7 +213,6 @@ export const products = [
             name: ["Direct Turkish Blue"],
             image: "/color/direct/direct-fast-turq-blue-gl.jpg",
           },
-          // TODO Add image
         ],
       },
     ],
