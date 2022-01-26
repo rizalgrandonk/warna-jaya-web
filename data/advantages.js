@@ -2,6 +2,7 @@ import { RiUserFollowLine } from "react-icons/ri";
 import { AiOutlineFileProtect } from "react-icons/ai";
 import { ImStack } from "react-icons/im";
 import { GoThumbsup } from "react-icons/go";
+import { MdOutlineStickyNote2 } from "react-icons/md";
 
 export const advantages = [
   {
@@ -15,6 +16,10 @@ export const advantages = [
   {
     icon: ImStack,
     text: "advantagesProduct",
+  },
+  {
+    icon: MdOutlineStickyNote2,
+    text: "advantagesFaktur",
   },
   {
     icon: GoThumbsup,

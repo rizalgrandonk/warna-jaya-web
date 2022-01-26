@@ -86,7 +86,7 @@ export default function Home() {
 
       <Parallax bgImage={"/images/bg-3.jpg"} strength={600}>
         <div className="text-white py-20 md:py-28 bg-black/60 text-center px-4">
-          <h3 className="text-3xl md:text-5xl font-bold tracking-wide my-6 leading-tight mx-auto md:w-1/2">
+          <h3 className="text-3xl md:text-5xl font-bold tracking-wide my-6 mx-auto md:w-1/2">
             {localize(locale, "variasiProduk")}
           </h3>
           <p>{localize(locale, "variasiText")}</p>

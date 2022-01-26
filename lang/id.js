@@ -60,6 +60,7 @@ const id = {
     "Product yang kami tawarkan lengkap untuk segala kebutuhan produksi tekstil dan lain lain",
   advantagesKualitas:
     "Kualitas barang yang kami tawarkan lengkap mulai dari product dengan kualitas terbaik hingga kualitas terendah menyesuaikan dengan permintaan customer",
+  advantagesFaktur: "Kami bisa memberikan faktur pajak jika diperlukan",
 
   // Order System
   orderContact: "Hubungi kami melalui whatsapp atau email",

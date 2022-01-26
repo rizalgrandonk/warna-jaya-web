@@ -56,6 +56,7 @@ const en = {
     "Our products are various for every textile needs or other needs.",
   advantagesKualitas:
     "We offering various quality products from the best quality to lower quality depends on customer request",
+  advantagesFaktur: "We can provide tax invoice if needed",
 
   // Order System
   orderContact: "Call us on whatsapp or email",
